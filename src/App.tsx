@@ -786,9 +786,9 @@ const HomePage = () => {
               <p className="text-red-600 text-sm font-medium">Contracts Expiring This Month</p>
               <p className="text-2xl font-bold text-red-900">3</p>
             </div>
-            <div className="bg-yellow-50 p-4 rounded-lg">
-              <p className="text-yellow-600 text-sm font-medium">Supply Risk Level</p>
-              <p className="text-2xl font-bold text-yellow-900">Low</p>
+            <div className="bg-green-50 p-4 rounded-lg">
+              <p className="text-green-600 text-sm font-medium">Supply Risk Level</p>
+              <p className="text-2xl font-bold text-green-900">Low</p>
             </div>
           </div>
         </div>
