@@ -806,15 +806,20 @@ const HomePage = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
+                <tr>
+                    <td className="px-4 py-2 text-sm">Asymchem (China)</td>
+                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tarrifs</td>
+                    <td className="px-4 py-2">{getRiskIcon("High")}</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2 text-sm">WuXi AppTec (China)</td>
+                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tarrifs</td>
+                    <td className="px-4 py-2">{getRiskIcon("High")}</td>
+                  </tr>
                   <tr>
                     <td className="px-4 py-2 text-sm">Lonza (Switzerland)</td>
                     <td className="px-4 py-2 text-sm text-gray-600">EU regulatory changes</td>
                     <td className="px-4 py-2">{getRiskIcon("Medium")}</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-2 text-sm">WuXi AppTec (China)</td>
-                    <td className="px-4 py-2 text-sm text-gray-600">US-China trade tensions</td>
-                    <td className="px-4 py-2">{getRiskIcon("High")}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 text-sm">Samsung Biologics (South Korea)</td>
