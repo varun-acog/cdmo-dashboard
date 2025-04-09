@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Home, Package, Users, BarChart3, AlertTriangle, Bell, LogOut, Search, MessageSquare, CheckCircle, Flame, TrendingUp, TrendingDown } from 'lucide-react';
-import { format, addDays, subDays } from 'date-fns';
+import { format, addDays } from 'date-fns';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
@@ -456,6 +456,191 @@ const suppliers = [
       negotiationLevers: 'Regional exclusivity, bulk pricing.',
       costTransparency: 'Quarterly cost reviews provided.'
     }
+  },
+  {
+    id: 6,
+    name: 'Asymchem (China)',
+    region: 'Asia Pacific',
+    contract: {
+      length: '2-year contract',
+      expiry: format(addDays(new Date(), 365), 'MMM dd, yyyy'),
+      terms: 'Net 30, Variable pricing',
+      exclusivity: 'Non-exclusive',
+      qualityMetrics: '98% acceptance rate required'
+    },
+    capacity: '250+ batch runs annually',
+    compliance: ['ISO 9001', 'GMP', 'CFDA certified'],
+    riskRating: 'High',
+    geopolitical: {
+      region: 'Moderate stability',
+      tradeAgreements: ['RCEP'],
+      politicalStability: 'Medium',
+      logisticsRisk: 'High',
+      additionalRisk: 'New Trump Tariffs'
+    },
+    financial: {
+      rating: 'A-',
+      marketCap: '$1.5B',
+      revenue: '$300M annually'
+    },
+    esg: {
+      environmentalScore: 78,
+      socialScore: 82,
+      governanceScore: 85,
+      certifications: ['ISO 14001']
+    },
+    alternateProducts: ['APIs', 'Intermediates', 'Specialty Chemicals'],
+    riskAlerts: [
+      'New Trump Tariffs increasing costs starting Q2 2025',
+      'Port delays in Tianjin affecting shipments'
+    ],
+    profile: {
+      background: 'Founded in 1998, Asymchem specializes in API and intermediate production.',
+      generalInfo: '900 employees, known for custom synthesis and process development.'
+    },
+    manufacturing: {
+      capabilities: 'Custom synthesis, high-potency API production.',
+      capacities: 'Up to 600L reactors, 250+ batch runs annually.'
+    },
+    geographicPresence: {
+      locations: ['China (HQ)', 'USA (sales office)'],
+      infrastructure: '3 manufacturing plants, 1 R&D center.'
+    },
+    quality: {
+      compliance: ['ISO 9001', 'GMP', 'CFDA certified'],
+      qualitySystems: 'Real-time process monitoring, GMP audits.',
+      auditHistory: 'Last audit: Q3 2024, full compliance.',
+      certifications: ['ISO 14001']
+    },
+    pricing: {
+      structures: 'Variable pricing due to tariff impacts, contract options.',
+      paymentTerms: 'Net 30 days, adjustments for tariff costs.',
+      financialStability: 'A- rating, solid cash reserves.',
+      negotiationLevers: 'Volume commitments, tariff mitigation strategies.',
+      costTransparency: 'Monthly tariff impact reports provided.'
+    }
+  },
+  {
+    id: 7,
+    name: 'WuXi AppTec (China)',
+    region: 'Asia Pacific',
+    contract: {
+      length: '3-year contract',
+      expiry: format(addDays(new Date(), 730), 'MMM dd, yyyy'),
+      terms: 'Net 45, Tiered pricing',
+      exclusivity: 'Non-exclusive',
+      qualityMetrics: '97% acceptance rate required'
+    },
+    capacity: '400+ batch runs annually',
+    compliance: ['ISO 9001', 'GMP', 'FDA certified'],
+    riskRating: 'High',
+    geopolitical: {
+      region: 'Moderate stability',
+      tradeAgreements: ['RCEP'],
+      politicalStability: 'Medium',
+      logisticsRisk: 'High',
+      additionalRisk: 'New Trump Tariffs'
+    },
+    financial: {
+      rating: 'A',
+      marketCap: '$3.2B',
+      revenue: '$700M annually'
+    },
+    esg: {
+      environmentalScore: 80,
+      socialScore: 83,
+      governanceScore: 87,
+      certifications: ['ISO 14001', 'Green Chemistry Award']
+    },
+    alternateProducts: ['Biologics', 'Small Molecules', 'Analytical Services'],
+    riskAlerts: [
+      'New Trump Tariffs impacting export costs starting Q2 2025',
+      'Expansion of biologics facility planned for 2025'
+    ],
+    profile: {
+      background: 'Established in 2000, WuXi AppTec is a global leader in contract research and manufacturing.',
+      generalInfo: '2,500 employees, extensive biologics and small molecule expertise.'
+    },
+    manufacturing: {
+      capabilities: 'Biologics production, small molecule synthesis, analytical testing.',
+      capacities: 'Up to 1,200L bioreactors, 400+ batch runs annually.'
+    },
+    geographicPresence: {
+      locations: ['China (HQ)', 'USA', 'Germany'],
+      infrastructure: '5 manufacturing sites, 2 R&D centers.'
+    },
+    quality: {
+      compliance: ['ISO 9001', 'GMP', 'FDA certified'],
+      qualitySystems: 'Advanced analytics, continuous quality improvement.',
+      auditHistory: 'Last audit: Q2 2024, no major issues.',
+      certifications: ['ISO 14001', 'Green Chemistry Award']
+    },
+    pricing: {
+      structures: 'Tiered pricing with tariff adjustments, spot pricing available.',
+      paymentTerms: 'Net 45 days, flexible for long-term partners.',
+      financialStability: 'A rating, strong revenue growth.',
+      negotiationLevers: 'Long-term contracts, diversified services.',
+      costTransparency: 'Quarterly financial impact reports shared.'
+    }
+  }
+];
+
+const programs = [
+  {
+    id: 1,
+    therapeuticArea: 'Central Nervous System (CNS)',
+    programName: 'RD20',
+    suppliers: [
+      {
+        name: 'CDMO Alpha',
+        materials: ['Chromatography Resins', 'Cell Culture Media']
+      },
+      {
+        name: 'BioProcess Solutions',
+        materials: ['Monoclonal Antibodies']
+      }
+    ]
+  },
+  {
+    id: 2,
+    therapeuticArea: 'Central Nervous System (CNS)',
+    programName: 'CNS-45',
+    suppliers: [
+      {
+        name: 'AsiaPharma Tech',
+        materials: ['Cell Culture Media']
+      }
+    ]
+  },
+  {
+    id: 3,
+    therapeuticArea: 'Oncology',
+    programName: 'ONC-15',
+    suppliers: [
+      {
+        name: 'Nordic Biotech',
+        materials: ['PCR Master Mix']
+      },
+      {
+        name: 'LatAm Pharmaceuticals',
+        materials: ['Cell Culture Media']
+      }
+    ]
+  },
+  {
+    id: 4,
+    therapeuticArea: 'Immunology',
+    programName: 'IMM-30',
+    suppliers: [
+      {
+        name: 'CDMO Alpha',
+        materials: ['PG-Seq Indexing Primers']
+      },
+      {
+        name: 'BioProcess Solutions',
+        materials: ['Monoclonal Antibodies', 'PCR Master Mix']
+      }
+    ]
   }
 ];
 
@@ -465,6 +650,7 @@ const Navbar = ({ active, setActive }) => {
     { id: 'home', label: 'Home', icon: Home },
     { id: 'materials', label: 'Materials', icon: Package },
     { id: 'suppliers', label: 'Suppliers', icon: Users },
+    { id: 'programs', label: 'Programs', icon: Users },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
   ];
 
@@ -589,7 +775,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
         </div>
       ) : (
         <div className="space-y-6">
-          {/* 1. Contract Information */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Contract Information</h3>
             <div className="grid grid-cols-2 gap-4">
@@ -601,7 +786,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* 2. Supplier Profiles */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Supplier Profiles</h3>
             <div className="space-y-4">
@@ -623,7 +807,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* 3. Supplier Quality and Certifications */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Supplier Quality and Certifications</h3>
             <div className="space-y-4">
@@ -643,7 +826,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* 4. Pricing and Contract Terms */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Pricing and Contract Terms</h3>
             <div className="space-y-4">
@@ -664,7 +846,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* Financial & ESG */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Financial & ESG</h3>
             <div className="grid grid-cols-2 gap-4">
@@ -683,7 +864,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* Geopolitical Factors */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Geopolitical Factors</h3>
             <div className="space-y-2">
@@ -694,7 +874,6 @@ const DetailModal = ({ isOpen, onClose, data, type }) => {
             </div>
           </div>
 
-          {/* Alternate Products & Risk Alerts */}
           <div className="bg-gray-50 p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">Alternate Products & Risk Alerts</h3>
             <div className="space-y-4">
@@ -806,14 +985,14 @@ const HomePage = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                <tr>
+                  <tr>
                     <td className="px-4 py-2 text-sm">Asymchem (China)</td>
-                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tarrifs</td>
+                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tariffs</td>
                     <td className="px-4 py-2">{getRiskIcon("High")}</td>
                   </tr>
                   <tr>
                     <td className="px-4 py-2 text-sm">WuXi AppTec (China)</td>
-                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tarrifs</td>
+                    <td className="px-4 py-2 text-sm text-gray-600">New Trump Tariffs</td>
                     <td className="px-4 py-2">{getRiskIcon("High")}</td>
                   </tr>
                   <tr>
@@ -939,35 +1118,6 @@ const MaterialsPage = () => {
 const SuppliersPage = () => {
   const [selectedSupplier, setSelectedSupplier] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState('All Programs');
-
-  const programs = [
-    'All Programs',
-    'Cell Therapy Supply Chain',
-    'API Global Initiative',
-    'Biologics Production Network',
-    'Vaccine Development Consortium',
-    'Medical Devices Alliance'
-  ];
-
-  const suppliersWithPrograms = suppliers.map(supplier => ({
-    ...supplier,
-    programs: [
-      supplier.name === 'CDMO Alpha' ? ['Cell Therapy Supply Chain', 'Biologics Production Network'] :
-      supplier.name === 'BioProcess Solutions' ? ['API Global Initiative', 'Vaccine Development Consortium'] :
-      supplier.name === 'AsiaPharma Tech' ? ['Medical Devices Alliance', 'API Global Initiative'] :
-      supplier.name === 'Nordic Biotech' ? ['Biologics Production Network', 'Vaccine Development Consortium'] :
-      ['API Global Initiative', 'Medical Devices Alliance']
-    ][0]
-  }));
-
-  const filteredSuppliers = selectedProgram === 'All Programs' 
-    ? suppliersWithPrograms 
-    : suppliersWithPrograms.filter(supplier => supplier.programs.includes(selectedProgram));
-
-  const handleProgramChange = (e) => {
-    setSelectedProgram(e.target.value);
-  };
 
   return (
     <div className="py-8">
@@ -985,38 +1135,6 @@ const SuppliersPage = () => {
           </div>
         </div>
 
-        <div className="mb-6 bg-white p-4 rounded-lg shadow">
-          <div className="flex flex-col sm:flex-row sm:items-center">
-            <div className="mb-4 sm:mb-0 sm:mr-4">
-              <h3 className="text-lg font-medium text-gray-900">Program Affiliations</h3>
-              <p className="text-sm text-gray-500">Filter suppliers by program participation</p>
-            </div>
-            <div className="flex-1 sm:max-w-xs">
-              <select
-                value={selectedProgram}
-                onChange={handleProgramChange}
-                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
-              >
-                {programs.map((program) => (
-                  <option key={program} value={program}>
-                    {program}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-          {selectedProgram !== 'All Programs' && (
-            <div className="mt-4">
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                {selectedProgram}
-              </span>
-              <span className="ml-2 text-sm text-gray-500">
-                {filteredSuppliers.length} {filteredSuppliers.length === 1 ? 'supplier' : 'suppliers'} in this program
-              </span>
-            </div>
-          )}
-        </div>
-
         <div className="bg-white shadow rounded-lg overflow-hidden">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
@@ -1026,56 +1144,38 @@ const SuppliersPage = () => {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Contract</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Risk Rating</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Programs</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {filteredSuppliers.length > 0 ? (
-                filteredSuppliers.map((supplier) => (
-                  <tr key={supplier.id} className="hover:bg-gray-50 cursor-pointer" onClick={() => {
-                    setSelectedSupplier(supplier);
-                    setIsModalOpen(true);
-                  }}>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{supplier.name}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{supplier.region}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{supplier.contract.length}</div>
-                      <div className="text-sm text-gray-500">Expires: {supplier.contract.expiry}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{supplier.capacity}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                        supplier.riskRating === 'Low' ? 'bg-green-100 text-green-800' :
-                        supplier.riskRating === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-red-100 text-red-800'
-                      }`}>
-                        {supplier.riskRating}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex flex-wrap gap-1">
-                        {supplier.programs.map((program, index) => (
-                          <span key={index} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
-                            {program.split(' ')[0]}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <button className="text-indigo-600 hover:text-indigo-900">View Details</button>
-                    </td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="7" className="px-6 py-8 text-center text-sm text-gray-500">
-                    No suppliers found for the selected program.
+              {suppliers.map((supplier) => (
+                <tr key={supplier.id} className="hover:bg-gray-50 cursor-pointer" onClick={() => {
+                  setSelectedSupplier(supplier);
+                  setIsModalOpen(true);
+                }}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">{supplier.name}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{supplier.region}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm text-gray-900">{supplier.contract.length}</div>
+                    <div className="text-sm text-gray-500">Expires: {supplier.contract.expiry}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{supplier.capacity}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                      supplier.riskRating === 'Low' ? 'bg-green-100 text-green-800' :
+                      supplier.riskRating === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-red-100 text-red-800'
+                    }`}>
+                      {supplier.riskRating}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <button className="text-indigo-600 hover:text-indigo-900">View Details</button>
                   </td>
                 </tr>
-              )}
+              ))}
             </tbody>
           </table>
         </div>
@@ -1094,21 +1194,129 @@ const SuppliersPage = () => {
   );
 };
 
+const ProgramsPage = () => {
+  const [selectedProgram, setSelectedProgram] = useState('All Programs');
+  
+  const programOptions = ['All Programs', ...programs.map(p => p.programName)];
+  
+  const filteredPrograms = selectedProgram === 'All Programs'
+    ? programs
+    : programs.filter(p => p.programName === selectedProgram);
+
+  const handleProgramChange = (e) => {
+    setSelectedProgram(e.target.value);
+  };
+
+  return (
+    <div className="py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="sm:flex sm:items-center sm:justify-between mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900">Programs</h2>
+          <div className="mt-3 sm:mt-0 sm:ml-4 flex space-x-3">
+            <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+              Export List
+            </button>
+            <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700">
+              <MessageSquare className="w-4 h-4 mr-2" />
+              Ask LLM
+            </button>
+          </div>
+        </div>
+
+        <div className="mb-6 bg-white p-4 rounded-lg shadow">
+          <div className="flex flex-col sm:flex-row sm:items-center">
+            <div className="mb-4 sm:mb-0 sm:mr-4">
+              <h3 className="text-lg font-medium text-gray-900">Filter Programs</h3>
+              <p className="text-sm text-gray-500">Select a program to view details</p>
+            </div>
+            <div className="flex-1 sm:max-w-xs">
+              <select
+                value={selectedProgram}
+                onChange={handleProgramChange}
+                className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+              >
+                {programOptions.map((program) => (
+                  <option key={program} value={program}>
+                    {program}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+          {selectedProgram !== 'All Programs' && (
+            <div className="mt-4">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                {selectedProgram}
+              </span>
+              <span className="ml-2 text-sm text-gray-500">
+                Showing {filteredPrograms.length} program{filteredPrograms.length !== 1 ? 's' : ''}
+              </span>
+            </div>
+          )}
+        </div>
+
+        <div className="bg-white shadow rounded-lg overflow-hidden">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Therapeutic Area</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Program Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Suppliers</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materials</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {filteredPrograms.length > 0 ? (
+                filteredPrograms.map((program) => (
+                  <tr key={program.id} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{program.therapeuticArea}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{program.programName}</td>
+                    <td className="px-6 py-4 text-sm text-gray-500">
+                      <ul className="list-disc pl-5">
+                        {program.suppliers.map((supplier, index) => (
+                          <li key={index}>{supplier.name}</li>
+                        ))}
+                      </ul>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-gray-500">
+                      <ul className="list-disc pl-5">
+                        {program.suppliers.map((supplier, index) => (
+                          <li key={index}>
+                            {supplier.name}: {supplier.materials.join(', ')}
+                          </li>
+                        ))}
+                      </ul>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="px-6 py-8 text-center text-sm text-gray-500">
+                    No programs found for the selected filter.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AnalyticsPage = () => {
-  // Derive some real metrics from suppliers and materials data
-  const totalSuppliers = suppliers.length; // 5 suppliers
-  const totalMaterials = materials.length; // 5 materials
+  const totalSuppliers = suppliers.length;
+  const totalMaterials = materials.length;
   const avgLeadTime = materials.reduce((sum, m) => {
     const [min, max] = m.leadTime.split('-').map(t => parseInt(t));
     return sum + (min + max) / 2;
-  }, 0) / totalMaterials; // Average lead time in days
+  }, 0) / totalMaterials;
   const highRiskSuppliers = suppliers.filter(s => s.riskRating === 'Medium' || s.riskRating === 'High').length;
   const supplierComplianceRate = Math.round((suppliers.reduce((sum, s) => {
     const rate = parseFloat(s.contract.qualityMetrics.match(/\d+%/)?.[0] || '0');
     return sum + rate;
-  }, 0) / totalSuppliers)); // Average quality acceptance rate
+  }, 0) / totalSuppliers));
 
-  // Realistic static data based on supplier and material context
   const geopoliticalRisks = [
     {
       region: 'North America',
@@ -1137,10 +1345,9 @@ const AnalyticsPage = () => {
     }
   ];
 
-  // Supply chain health indicators based on derived and realistic data
-  const onTimeDelivery = 92; // Realistic static value based on industry standards (could be derived if more data provided)
-  const supplierQualityRating = supplierComplianceRate - 5; // Slightly lower than compliance to reflect real-world variance
-  const costVariance = 12; // Realistic static value reflecting typical cost fluctuations
+  const onTimeDelivery = 92;
+  const supplierQualityRating = supplierComplianceRate - 5;
+  const costVariance = 12;
 
   return (
     <div className="py-8">
@@ -1153,7 +1360,6 @@ const AnalyticsPage = () => {
           </button>
         </div>
         
-        {/* Geopolitical & Regional Risk Assessment */}
         <div className="bg-white rounded-lg shadow mb-6">
           <div className="px-6 py-5 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">Geopolitical & Regional Risk Assessment</h3>
@@ -1174,7 +1380,6 @@ const AnalyticsPage = () => {
           </div>
         </div>
 
-        {/* Risk Metrics */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-6">
           <div className="bg-white overflow-hidden shadow rounded-lg">
             <div className="px-4 py-5 sm:p-6">
@@ -1217,7 +1422,6 @@ const AnalyticsPage = () => {
           </div>
         </div>
 
-        {/* Supply Chain Health Indicators */}
         <div className="bg-white shadow rounded-lg">
           <div className="px-6 py-5 border-b border-gray-200">
             <h3 className="text-lg font-medium text-gray-900">Supply Chain Health Indicators</h3>
@@ -1294,6 +1498,8 @@ function App() {
         return <MaterialsPage />;
       case 'suppliers':
         return <SuppliersPage />;
+      case 'programs':
+        return <ProgramsPage />;
       case 'analytics':
         return <AnalyticsPage />;
       default:
