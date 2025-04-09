@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
-// Mock data
+// Mock data (unchanged until programs)
 const alerts = [
   { id: 1, type: 'contract', message: 'Supplier A contract expires in 30 days', severity: 'high' },
   { id: 2, type: 'risk', message: 'New trade restrictions in Region B', severity: 'medium' },
@@ -585,11 +585,14 @@ const suppliers = [
   }
 ];
 
+// Updated programs data with status and criticality
 const programs = [
   {
     id: 1,
     therapeuticArea: 'Central Nervous System (CNS)',
     programName: 'RD20',
+    status: 'Active',
+    criticality: 'High',
     suppliers: [
       {
         name: 'CDMO Alpha',
@@ -605,6 +608,8 @@ const programs = [
     id: 2,
     therapeuticArea: 'Central Nervous System (CNS)',
     programName: 'CNS-45',
+    status: 'Inactive',
+    criticality: 'Low',
     suppliers: [
       {
         name: 'AsiaPharma Tech',
@@ -616,6 +621,8 @@ const programs = [
     id: 3,
     therapeuticArea: 'Oncology',
     programName: 'ONC-15',
+    status: 'Completed',
+    criticality: 'Medium',
     suppliers: [
       {
         name: 'Nordic Biotech',
@@ -631,6 +638,8 @@ const programs = [
     id: 4,
     therapeuticArea: 'Immunology',
     programName: 'IMM-30',
+    status: 'Active',
+    criticality: 'Medium',
     suppliers: [
       {
         name: 'CDMO Alpha',
@@ -644,7 +653,7 @@ const programs = [
   }
 ];
 
-// Components
+// Components (unchanged until ProgramsPage)
 const Navbar = ({ active, setActive }) => {
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
@@ -652,6 +661,7 @@ const Navbar = ({ active, setActive }) => {
     { id: 'suppliers', label: 'Suppliers', icon: Users },
     { id: 'programs', label: 'Programs', icon: Users },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+    { id: 'demo', label: 'Demo', icon: MessageSquare }, // Added Demo to navigation
   ];
 
   return (
@@ -1194,6 +1204,7 @@ const SuppliersPage = () => {
   );
 };
 
+// Updated ProgramsPage with new columns and sub-row structure
 const ProgramsPage = () => {
   const [selectedProgram, setSelectedProgram] = useState('All Programs');
   
@@ -1261,6 +1272,8 @@ const ProgramsPage = () => {
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Therapeutic Area</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Program Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Program Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Program Criticality</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Suppliers</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Materials</th>
               </tr>
@@ -1268,30 +1281,52 @@ const ProgramsPage = () => {
             <tbody className="bg-white divide-y divide-gray-200">
               {filteredPrograms.length > 0 ? (
                 filteredPrograms.map((program) => (
-                  <tr key={program.id} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{program.therapeuticArea}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{program.programName}</td>
-                    <td className="px-6 py-4 text-sm text-gray-500">
-                      <ul className="list-disc pl-5">
-                        {program.suppliers.map((supplier, index) => (
-                          <li key={index}>{supplier.name}</li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-500">
-                      <ul className="list-disc pl-5">
-                        {program.suppliers.map((supplier, index) => (
-                          <li key={index}>
-                            {supplier.name}: {supplier.materials.join(', ')}
-                          </li>
-                        ))}
-                      </ul>
-                    </td>
-                  </tr>
+                  <React.Fragment key={program.id}>
+                    {/* Main row */}
+                    <tr className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900" rowSpan={program.suppliers.length || 1}>
+                        {program.therapeuticArea}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" rowSpan={program.suppliers.length || 1}>
+                        {program.programName}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap" rowSpan={program.suppliers.length || 1}>
+                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          program.status === 'Active' ? 'bg-green-100 text-green-800' :
+                          program.status === 'Inactive' ? 'bg-red-100 text-red-800' :
+                          'bg-blue-100 text-blue-800'
+                        }`}>
+                          {program.status}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap" rowSpan={program.suppliers.length || 1}>
+                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          program.criticality === 'High' ? 'bg-red-100 text-red-800' :
+                          program.criticality === 'Low' ? 'bg-green-100 text-green-800' :
+                          'bg-yellow-100 text-yellow-800'
+                        }`}>
+                          {program.criticality}
+                        </span>
+                      </td>
+                      {program.suppliers.length > 0 && (
+                        <>
+                          <td className="px-6 py-2 text-sm text-gray-500">{program.suppliers[0].name}</td>
+                          <td className="px-6 py-2 text-sm text-gray-500">{program.suppliers[0].materials.join(', ')}</td>
+                        </>
+                      )}
+                    </tr>
+                    {/* Subrows for additional suppliers */}
+                    {program.suppliers.slice(1).map((supplier, index) => (
+                      <tr key={`${program.id}-supplier-${index}`} className="hover:bg-gray-50 border-t border-gray-200">
+                        <td className="px-6 py-2 text-sm text-gray-500">{supplier.name}</td>
+                        <td className="px-6 py-2 text-sm text-gray-500">{supplier.materials.join(', ')}</td>
+                      </tr>
+                    ))}
+                  </React.Fragment>
                 ))
               ) : (
                 <tr>
-                  <td colSpan="4" className="px-6 py-8 text-center text-sm text-gray-500">
+                  <td colSpan="6" className="px-6 py-8 text-center text-sm text-gray-500">
                     No programs found for the selected filter.
                   </td>
                 </tr>
@@ -1487,6 +1522,32 @@ const AnalyticsPage = () => {
   );
 };
 
+// New Demo Page with YouTube Video
+const DemoPage = () => {
+  return (
+    <div className="py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="sm:flex sm:items-center sm:justify-between mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900">Demo - LLM Responses</h2>
+        </div>
+        <div className="bg-white shadow rounded-lg overflow-hidden p-6">
+          <h3 className="text-lg font-medium text-gray-900 mb-4">LLM Response Demonstration</h3>
+          <div className="relative" style={{ paddingBottom: '56.25%' }}>
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/Kiq6JzL2R1I"
+              title="LLM Response Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [active, setActive] = useState('home');
 
@@ -1502,6 +1563,8 @@ function App() {
         return <ProgramsPage />;
       case 'analytics':
         return <AnalyticsPage />;
+      case 'demo':
+        return <DemoPage />;
       default:
         return <HomePage />;
     }
